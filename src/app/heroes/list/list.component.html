@@ -8,7 +8,8 @@
 </ng-template>
 
 
-<button class="btn btn-outline-danger" (click)="removeLastHero()"> Borrar ultimo heroe </button>
+<button class="btn btn-outline-danger" (click)="removeLastHero()" *ngIf="heroeNames.length>0"> Borrar ultimo heroe
+</button>
 
 
 <ul class="mt-2 list-group">
