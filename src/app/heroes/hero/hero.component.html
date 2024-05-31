@@ -11,5 +11,13 @@
   <dd> {{capitalizedName}}</dd>
 </dl>
 
-<button class="btn btn-primary mx-2" (click)="changeHero()">Cambiar nombre</button>
-<button class="btn btn-primary " (click)="changeAge()">Cambiar edad</button>
+<button class="btn btn-primary mx-2" (click)="changeHero()" *ngIf="name === 'ironman'">
+  Cambiar nombre
+</button>
+<button class="btn btn-primary " (click)="changeAge()" *ngIf="age === 45">
+  Cambiar edad
+</button>
+
+<button class="btn btn-primary mx-2" (click)="reset()">
+  Reset
+</button>
