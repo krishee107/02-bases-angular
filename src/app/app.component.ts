@@ -11,4 +11,8 @@ export class AppComponent {
   increasetBy(num: number): void {
     this.counter += num;
   }
+
+  reset(): void {
+    this.counter = 10;
+  }
 }
