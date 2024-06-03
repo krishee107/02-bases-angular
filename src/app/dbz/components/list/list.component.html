@@ -2,11 +2,17 @@
 <ul class="list-group">
   <li
     *ngFor="let character of characterList; let i = index; let isFirst = first; let isLast = last; let isEven = even; let isOdd = odd;"
-    class="list-group-item">
+    class="list-group-item d-flex justify-content-between align-items-center"
+    [ngClass]="{'list-group-item-success': isLast, 'list-group-item-danger': isFirst}">
     <!-- *ngFor para recorrer el arreglo de personajes + let i = index para obtener el índice de cada personaje + let isFirst = first para saber si es el primer personaje + let isLast = last para saber si es el último personaje + let isEven = even para saber si es un índice par + let isOdd = odd para saber si es un índice impar -->
-    <span class="text-primary">{{i+1}}. </span>
-    <span>{{ character.name }} - </span>
-    <strong>Power: </strong>
-    <span>{{ character.power }}</span>
+    <!-- *ngClass para aplicar una clase condicionalmente -->
+    <div>
+      <span class="text-primary">{{i+1}}. </span>
+      <span>{{ character.name }} - </span>
+      <strong>Power: </strong>
+      <span>{{ character.power }}</span>
+    </div>
+
+    <button class="btn btn-danger" (click)="onDeleteCharacter(i)">Borrar</button>
   </li>
 </ul>

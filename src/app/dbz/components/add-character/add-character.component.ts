@@ -15,7 +15,7 @@ export class AddCharacterComponent {
     power: 0
   };
 
-  //Información en dos direcciones con ngModel. 
+  //Información en dos direcciones con ngModel.
   emitCharacter(): void {
     if (this.character.name.trim().length === 0) { //Valida que el campo de nombre no esté vacío.
       return;
@@ -26,6 +26,4 @@ export class AddCharacterComponent {
     this.character = { 'name': '', 'power': 0 }; //Limpia los campos del formulario.
   }
 
-  addCharacter(): void {
-  }
 }
