@@ -9,6 +9,8 @@
   </div>
 
   <div class="col">
-    <dbz-add-character></dbz-add-character>
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+    <!--  (onNewCharacter)="onNewCharacter($event)" es un evento personalizado que se dispara desde el componente hijo dbz-add-character y que es capturado por el componente padre main-page -->
+    <!-- En este caso, el evento onNewCharacter se dispara cuando se agrega un nuevo personaje y se captura en el componente main-page. Enviamos el evento $event que contiene el nuevo personaje agregado -->
   </div>
 </div>

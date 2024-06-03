@@ -13,4 +13,9 @@ export class MainPageComponent {
     { name: 'Trunks', power: 6000 },
 
   ];
+
+
+  onNewCharacter(character: Character): void {
+    this.characters.push(character);
+  }
 }

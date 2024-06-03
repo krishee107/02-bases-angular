@@ -1,11 +1,17 @@
-<form>
+<form (ngSubmit)="emitCharacter()" #form="ngForm">
   <div class="form-group">
     <label for="name">Nombre</label>
-    <input type="text" class="form-control" id="name">
+    <!-- [(ngModel)]="character.name" es una directiva de Angular que permite enlazar el valor de un input con una propiedad de un componente -->
+    <!-- Esto significa que si el valor de character.name cambia, el valor del input también lo hará y viceversa -->
+    <input type="text" class="form-control" id="name" [(ngModel)]="character.name" name="name">
   </div>
   <div class="form-group">
     <label for="power">Poder</label>
-    <input type="number" class="form-control" id="power">
+    <input type="number" class="form-control" id="power" [(ngModel)]="character.power" name="power">
   </div>
-  <button type="submit" class="btn btn-primary mt-2">Agregar personaje</button>
+  <button type="submit" class="btn btn-primary mt-2">
+    Agregar personaje
+  </button>
+
+  <pre>{{ character | json }}</pre>
 </form>
