@@ -8,8 +8,19 @@ import { DbzService } from '../services/dbz.services';
 })
 
 export class MainPageComponent {
-  constructor(public dbzService: DbzService) {
+  constructor(private dbzService: DbzService) { }
 
+  get characters(): Character[] {
+    return [...this.dbzService.characters]; //Se retorna una copia del arreglo de personajes.
+  }
+
+  onDeletedCharacter(id: string): void {
+    this.dbzService.deleteCharacterById(id); //Se llama al método deleteCharacterById del servicio.
+  }
+
+
+  onNewCharacter(character: Character): void {
+    this.dbzService.addCharacter(character); //Se llama al método addCharacter del servicio.
   }
 
 
